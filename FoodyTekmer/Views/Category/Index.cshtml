@@ -1,0 +1,43 @@
+﻿@model List<FoodyTekmerEntityLayer.Concreate.Category>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/lib\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+<h2 class="h2 text-center">Kategori Listesi</h2>
+
+<div class="table-responsive">
+<table class="table">
+        <caption>
+            @Model.Count adet kategori listelendi.
+                <a href="/category/CreateCategory">Kategori Ekle</a>
+        </caption>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kategori Adı</th>
+            <th scope="col" colspan="2"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td scope="row">@item.CategoryId</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+                        <a href="/category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a>
+                    </td>
+                    <td>
+                        <a href="/category/UpdateCategory/@item.CategoryId" class="btn btn-warning">Güncelle</a>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+</div>
+</div>

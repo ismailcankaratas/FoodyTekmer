@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+@Html.Partial("PartialHead");
+
+<body>
+    @Html.Partial("SpinnerPartial");
+
+    @Html.Partial("PartialNavbar");
+
+    @Html.Partial("PartialPageHeader");
+
+    @await Component.InvokeAsync("ProductListComponent");
+
+    @await Component.InvokeAsync("FooterComponent");
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    
+    @Html.Partial("ScriptComponentPartial")
+</body>
+
+</html>
